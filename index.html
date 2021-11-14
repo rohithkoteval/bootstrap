@@ -76,6 +76,78 @@
         </div>
     </div>
 
+    <div id="bookModal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg" role="content">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Reserve a Table</h4>
+                    <button type="button" class="close" data-dismiss="modal">
+                        &times;
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="ReserverTableForm">
+                        <div class="from-group row">
+                            <label for="Noofguest" class="col-md-2 col-form-label control-label">Number of Guests</label>
+                            <div class="col-md-9">
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" checked id="1" value="1" name="Noofguest">
+                                    <label class="form-check-label" for="1">1</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="2" value="2" name="Noofguest">
+                                    <label class="form-check-label" for="2">2</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="3" value="3" name="Noofguest">
+                                    <label class="form-check-label" for="3">3</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="4" value="4" name="Noofguest">
+                                    <label class="form-check-label" for="4">4</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="5" value="5" name="Noofguest">
+                                    <label class="form-check-label" for="5">5</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="6" value="6" name="Noofguest">
+                                    <label class="form-check-label" for="6">6</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="from-group row">
+                            <label for="section" class="col-md-2 col-form-label">Section</label>
+                            <!-- &nbsp;&nbsp; -->
+                            <div class="btn-group" role="group">
+                                <label class="btn btn-success">
+                                    <input type="radio" checked id="1" value="smoking" name="section" style="display: none;" checked>
+                                Non-Smoking</label>
+                                <label class="btn btn-danger">
+                                    <input type="radio" checked id="2" value="smoking" name="section" style="display: none;">
+                                Smoking</label>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="from-group row">
+                            <label for="Date&time" class="col-md-2 col-form-label">Date and Time</label>
+                            <div class="input-group col-md-8">
+                                <input type="date" class="form-control col-md-6" id="date" placeholder="Date">
+                                <div class="col-md-1"></div>
+                                <input type="time" class="form-control col-md-6" id="time" placeholder="Time">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <button type="button" class="btn btn-secondary offset-md-2" data-dismiss="modal">Cancel</button>
+                            &nbsp;&nbsp;
+                            <button type="submit" class="btn btn-primary">Reserve</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <header class="jumbotron">
         <div class="container">
             <div class="row row-header">
@@ -87,11 +159,16 @@
                     <img src="img/logo.png" class="img-fluid"></img>
                 </div>
                 <div class="col-12 col-sm-3 align-self-center">
-                    <a role="button" class="btn btn-warning btn-lg btn-block nav-link" style="text-decoration: none;" role="button"
+                    <!-- <a role="button" class="btn btn-warning btn-lg btn-block nav-link" style="text-decoration: none;" role="button"
                        data-toggle="tooltip" data-html="true" href="#ReserveTablecard"
                        title="Or Call us at <br><strong>+91 243106</strong>"
                        data-placement="bottom" href="#ReserveTablecard">Reserve Table
+                    </a> -->
+                    <a role="button" class="btn btn-warning btn-lg btn-block nav-link" style="text-decoration: none; color: white;"
+                    data-toggle="modal" data-target="#bookModal">
+                        Reserve Table
                     </a>
+
                 </div>
             </div>
         </div>
@@ -301,11 +378,15 @@
 <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
 <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
 <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-<script>
+<!-- <script>
     $(document).ready(function(){
         $('[data-toggle="tooltip"]').tooltip();
     });
-</script>
+</script> -->
+<!-- <script>
+    $('ReserverTableForm').bind('radio', function(){
+    });
+</script> -->
 </body>
 
 </html>
